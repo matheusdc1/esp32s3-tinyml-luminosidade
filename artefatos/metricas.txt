@@ -1,0 +1,13 @@
+Amostras totais: 1500
+Treino: 1200
+Teste: 300
+Acuracia do modelo float: 1.0000
+Perda do modelo float: 0.012075
+Acuracia do modelo int8: 1.0000
+Tamanho do modelo int8: 2096 bytes
+Entrada: dtype=<class 'numpy.int8'>, quantizacao=(0.003921568859368563, -128)
+Saida: dtype=<class 'numpy.int8'>, quantizacao=(0.00390625, -128)
+Matriz de confusao (linhas=real, colunas=previsto):
+[[ 97   0   0]
+ [  0 105   0]
+ [  0   0  98]]

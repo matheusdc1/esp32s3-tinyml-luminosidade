@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Matheus Dalla Costa",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": { "builder": "esp-idf" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -10,
+      "left": 330,
+      "attrs": { "lux": "400", "rl10": "50", "gamma": "0.7" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ldr1:VCC", "esp:3V3", "red", [] ],
+    [ "ldr1:GND", "esp:GND.1", "black", [] ],
+    [ "ldr1:AO", "esp:4", "green", [] ]
+  ],
+  "dependencies": {}
+}
