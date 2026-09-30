@@ -46,3 +46,27 @@ Valores sugeridos para demonstração:
 - `10000 lux`: ambiente `CLARO`.
 
 O LDR está ligado assim: `VCC -> 3V3`, `GND -> GND` e `AO -> GPIO4`.
+
+## Resultados da simulação
+
+As capturas abaixo mostram o mesmo firmware executando no ESP32-S3 virtual. Ao
+alterar a iluminação do LDR no Wokwi, a leitura do ADC é enviada ao modelo
+TinyML, que retorna a classe e os escores no monitor serial.
+
+| Iluminação | ADC aproximado | Classe prevista | Maior escore |
+| ---: | ---: | :--- | ---: |
+| 10 lux | 3413 | `ESCURO` | 0,996 |
+| 417 lux | 1100 | `INTERNO` | 0,996 |
+| 10000 lux | 156 | `CLARO` | 0,996 |
+
+### Ambiente escuro — 10 lux
+
+![Simulação do classificador reconhecendo ambiente escuro](docs/images/escuro.png)
+
+### Ambiente interno — 417 lux
+
+![Simulação do classificador reconhecendo ambiente interno](docs/images/interno.png)
+
+### Ambiente claro — 10000 lux
+
+![Simulação do classificador reconhecendo ambiente claro](docs/images/claro.png)
